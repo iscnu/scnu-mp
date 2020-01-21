@@ -1,0 +1,20 @@
+<view class="container">
+  <view class="page-bd">
+    <view class="search-tt">
+      <view class="search-icon"></view>
+      <view>馆藏书籍检索</view>
+    </view>
+    <view class="search-input">
+      <input class="" value="" type="text" placeholder="输入查找关键字"
+        maxlength="140"
+        bindinput=""
+        bindfocus=""
+        bindblur=""
+        bindconfirm="">
+      </input>
+    </view>
+    <view class="search-btn">
+      <button class="default"></button>
+    </view>
+  </view>
+</view>
