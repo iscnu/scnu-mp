@@ -39,6 +39,13 @@
 					"id": -1,
 					"name": "图书查询",
 					"pathName": "pages/book/book-idx",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "图书查询结果页",
+					"pathName": "pages/book/book-result",
 					"scene": null
 				}
 			]

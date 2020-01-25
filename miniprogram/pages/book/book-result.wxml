@@ -1,0 +1,25 @@
+<view class="container">
+  <view class="page-bd">
+    <view class="search-box">
+      <input type="text"
+        maxlength="140"
+        value=""
+        placeholder="{{ focus ? '' : '输入查找关键字' }}"
+        bindinput="inputUpdate"
+        bindconfirm="inputConfirm">
+      </input>
+      <view class="search-btn-wrap" bindtap="inputConfirm">
+        <view class="search-btn"></view>
+      </view>
+    </view>
+    <view class="search-result">
+      <view class="loading">
+        <view class="loading-spinner"></view>
+      </view>
+      <view class="result-empty">
+        <view>{{ empty ? '输入书籍关键词，点击搜索按钮开始搜索' : '找不到结果，换个关键字试试？' }}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
