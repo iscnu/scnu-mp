@@ -7,11 +7,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.8.2",
 	"projectname": "scnu-mp",
-	"scripts": {
-		"beforeCompile": "npm run tsc",
-		"beforePreview": "npm run tsc",
-		"beforeUpload": "npm run tsc"
-	},
+	"scripts": {},
 	"setting": {},
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},

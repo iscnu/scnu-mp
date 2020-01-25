@@ -5,16 +5,18 @@
       <view>馆藏书籍检索</view>
     </view>
     <view class="search-input">
-      <input class="" value="" type="text" placeholder="输入查找关键字"
+      <input type="text"
         maxlength="140"
-        bindinput=""
-        bindfocus=""
-        bindblur=""
-        bindconfirm="">
+        value=""
+        placeholder="{{ focus ? '' : '输入查找关键字' }}"
+        bindinput="inputUpdate"
+        bindfocus="inputFocus"
+        bindblur="inputBlur"
+        bindconfirm="inputConfirm">
       </input>
     </view>
-    <view class="search-btn">
-      <button class="default"></button>
+    <view class="search-btn-wrap" bindtap="inputConfirm">
+      <view class="search-btn"></view>
     </view>
   </view>
 </view>
