@@ -13,11 +13,37 @@
       </view>
     </view>
     <view class="search-result">
-      <view class="loading">
+      <view class="loading" wx:if="{{ loading && !searchResult.length }}">
         <view class="loading-spinner"></view>
       </view>
-      <view class="result-empty">
-        <view>{{ empty ? '输入书籍关键词，点击搜索按钮开始搜索' : '找不到结果，换个关键字试试？' }}</view>
+      <view class="result-empty" wx:elif="{{ !searchResult.length }}">
+        <view>{{ init ? '输入书籍关键词，点击搜索按钮开始搜索' : '找不到结果，换个关键字试试？' }}</view>
+      </view>
+      <view class="result-list" wx:else>
+        <view class="book-item"
+          wx:for="{{ searchResult }}"
+          wx:key="num">
+          <view class="book-cover">
+            <image src="{{ item.coverImg || '/assets/imgs/book-default.jpg' }}"/>
+          </view>
+          <view class="book-info">
+            <view class="book-title">
+              <view>
+                {{ item.num }}. {{ item.title }}
+              </view>
+            </view>
+            <view class="book-text">{{ item.author }}</view>
+            <view class="book-text">{{ item.publisher }} {{ item.pubYear }}</view>
+            <view class="book-text">{{ item.callNo }}</view>
+          </view>
+          <view class="book-status">
+            <span>可借 {{ item.avaliable || 0 }} / 馆藏 {{ item.total || 0 }}</span>
+          </view>
+        </view>
+        <view wx:if="{{ loading && searchResult.length }}" class="loading-bottom">
+          <view class="loading-spinner"></view>
+        </view>
+        <view wx:if="{{ !loading && searchResult.length >= total }}" class="tip-nomore">- 没有更多啦 -</view>
       </view>
     </view>
   </view>

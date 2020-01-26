@@ -43,9 +43,10 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 1,
 					"name": "图书查询结果页",
 					"pathName": "pages/book/book-result",
+					"query": "keywords=费孝通",
 					"scene": null
 				}
 			]
