@@ -10,7 +10,7 @@ Page({
     const { keywords } = this.data;
     if (!keywords) return;
     wx.navigateTo({
-      url: '/pages/book/book-result?keywords=' + keywords,
+      url: '/pages/book/book-result/book-result?keywords=' + keywords,
     });
   },
 

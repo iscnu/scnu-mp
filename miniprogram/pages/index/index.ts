@@ -15,6 +15,11 @@ Page({
       url: "../logs/logs"
     });
   },
+  jumpToBook() {
+    wx.navigateTo({
+      url: "../book/book-idx/book-idx",
+    });
+  },
   onLoad() {
     if (app.globalData.userInfo) {
       this.setData({

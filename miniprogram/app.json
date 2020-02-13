@@ -2,8 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/book/book-idx",
-    "pages/book/book-result"
+    "pages/book/book-idx/book-idx",
+    "pages/book/book-result/book-result"
   ],
   "window": {
     "backgroundTextStyle": "light",
