@@ -3,7 +3,8 @@
     <view class="search-box">
       <input type="text"
         maxlength="140"
-        value=""
+        disabled="{{ loading }}"
+        value="{{ keywords }}"
         placeholder="{{ focus ? '' : '输入查找关键字' }}"
         bindinput="inputUpdate"
         bindconfirm="inputConfirm">
@@ -20,6 +21,7 @@
         <view>{{ init ? '输入书籍关键词，点击搜索按钮开始搜索' : '找不到结果，换个关键字试试？' }}</view>
       </view>
       <view class="result-list" wx:else>
+        <view class="result-info">共找到 {{ total }} 条结果</view>
         <view class="book-item"
           wx:for="{{ searchResult }}"
           wx:key="num">
@@ -43,7 +45,7 @@
         <view wx:if="{{ loading && searchResult.length }}" class="loading-bottom">
           <view class="loading-spinner"></view>
         </view>
-        <view wx:if="{{ !loading && searchResult.length >= total }}" class="tip-nomore">- 没有更多啦 -</view>
+        <view wx:if="{{ !loading && (searchResult.length >= total || page >= maxPage) }}" class="tip-nomore">- 没有更多啦 -</view>
       </view>
     </view>
   </view>

@@ -9,7 +9,9 @@ Page({
   inputConfirm: function () {
     const { keywords } = this.data;
     if (!keywords) return;
-    console.log(keywords);
+    wx.navigateTo({
+      url: '/pages/book/book-result?keywords=' + keywords,
+    });
   },
 
   // input UI

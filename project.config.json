@@ -3,6 +3,7 @@
 	"packOptions": {
 		"ignore": []
 	},
+	"cloudfunctionRoot": "cloud/function/",
 	"miniprogramRoot": "miniprogram/",
 	"compileType": "miniprogram",
 	"libVersion": "2.8.2",
@@ -12,6 +13,7 @@
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"appid": "wx7457bedd77bb8400",
+	"cloudfunctionTemplateRoot": "cloud/functionTemplate/",
 	"condition": {
 		"search": {
 			"current": -1,

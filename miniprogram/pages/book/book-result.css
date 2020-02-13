@@ -55,7 +55,13 @@
 }
 
 .result-list {
-  margin-top: 15px;
+  margin-top: 10px;
+
+  .result-info {
+    margin-bottom: 10px;
+    font-size: 12px;
+    text-align: center;
+  }
 
   .book-item {
     position: relative;
