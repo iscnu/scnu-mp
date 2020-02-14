@@ -59,19 +59,32 @@ Page({
       init: false,
       ...(page === 1 ? { searchResult: [] } : null)
     });
-    const { result } = await wx.cloud.callFunction({
-      name: 'book-search',
-      data: {
-        keywords,
-        pageCount: page,
-      },
-    });
-    const { data: { content: searchResult, total } } = result as searchFuncResultObject;
-    this.setData({
-      loading: false,
-      total,
-      searchResult: [...this.data.searchResult, ...searchResult]
-    });
-    this.currentKeywords = keywords;
+    try {
+      const { result } = await wx.cloud.callFunction({
+        name: 'book-search',
+        data: {
+          keywords,
+          pageCount: page,
+        },
+      });
+      const { data: { content: searchResult, total } } = result as searchFuncResultObject;
+      this.setData({
+        loading: false,
+        total,
+        searchResult: [...this.data.searchResult, ...searchResult]
+      });
+      this.currentKeywords = keywords;
+    } catch (err) {
+      wx.showModal({
+        title: '出错了',
+        content: JSON.stringify(err),
+        showCancel: false,
+        complete: () => {
+          this.setData({
+            loading: false,
+          });
+        },
+      });
+    }
   },
 });
