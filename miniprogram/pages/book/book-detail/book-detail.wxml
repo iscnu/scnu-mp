@@ -1,0 +1,63 @@
+<view class="container">
+  <view class="page-bd">
+    <view class="book-card">
+      <view class="book-cover">
+        <image src="{{ item.coverImg || '/assets/imgs/book-default.jpg' }}"/>
+      </view>
+      <view class="book-info">
+        <view class="book-title">
+          <view>{{bookInfo.title}}</view>
+        </view>
+        <view class="book-text">{{bookInfo.author}}</view>
+        <view class="book-text">{{bookInfo.publishingHouse}}</view>
+      </view>
+    </view>
+    <view class="book-collection-info card">
+      <view class="title">馆藏信息</view>
+      <view class="collection-num">可借 {{collectionInfo.avaliable}} / 馆藏 {{collectionInfo.total}}</view>
+      <view class="collection-list body">
+        <view wx:if="{{collectionInfo.list.length === 0}}" class="collection-item collection-empty">暂无书籍在架</view>
+        <block wx:else>
+          <view wx:for="{{collectionInfo.list}}" class="collection-item">
+            <view class="item-row">
+              <view class="item-tt">位置：</view>
+              <view class="item-bd">{{item.position}}</view>
+            </view>
+            <view class="item-row">
+              <view class="item-tt">状态：</view>
+              <view class="item-bd {{item.status === '可借' && 'item-avaliable'}}">{{item.status}}</view>
+            </view>
+            <view wx:if="{{item.roll}}" class="item-row">
+              <view class="item-tt">年卷期：</view>
+              <view class="item-bd">{{item.roll}}</view>
+            </view>
+            <view class="item-row">
+              <view class="item-tt">索书号：</view>
+              <view class="item-bd">{{item.callNum}}</view>
+            </view>
+            <view class="item-row">
+              <view class="item-tt">条码号：</view>
+              <view class="item-bd">{{item.barCode}}</view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class="book-intro card">
+      <view class="title">简介</view>
+      <view class="intro-text body">
+        <text>《周国平人生哲思录》，围绕人生这一主题，以语丝形式，向读者介绍了简单、爱生命、超脱、人生境界、生活质量、享受、苦难、情感体验等内容，《周国平人生哲思录》收作者在这方面的相关论述，发类编排。充分体现了作者对人生问题的思考和卓见。内容精采，富有哲理，文句精炼。</text>
+      </view>
+    </view>
+    <view class="book-detail card">
+      <view class="title">详细信息</view>
+      <view class="body">
+        <view class="item-row"
+          wx:for="{{detailInfo}}" wx:key="content">
+          <view class="item-tt">{{item.title}}</view>
+          <view class="item-bd">{{item.content}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

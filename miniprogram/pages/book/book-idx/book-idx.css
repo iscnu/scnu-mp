@@ -11,7 +11,7 @@
     margin: 0 auto 30rpx;
     width: 200rpx;
     height: 200rpx;
-    background: url(../../assets/imgs/book.svg) no-repeat;
+    background: url(../../../assets/imgs/book.svg) no-repeat;
     background-size: cover;
   }
 }
@@ -47,7 +47,7 @@
     display: block;
     width: 25px;
     height: 25px;
-    background: url(../../assets/imgs/search.svg) no-repeat;
+    background: url(../../../assets/imgs/search.svg) no-repeat;
     background-size: cover;
   }
 }

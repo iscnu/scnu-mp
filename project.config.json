@@ -50,6 +50,13 @@
 					"pathName": "pages/book/book-result/book-result",
 					"query": "keywords=费孝通",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "图书详情",
+					"pathName": "pages/book/book-detail/book-detail",
+					"query": "marc_no=2f63695539452b36544335513645552f7575754876413d3d",
+					"scene": null
 				}
 			]
 		}

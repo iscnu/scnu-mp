@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/book/book-idx/book-idx",
-    "pages/book/book-result/book-result"
+    "pages/book/book-result/book-result",
+    "pages/book/book-detail/book-detail"
   ],
   "window": {
     "backgroundTextStyle": "light",
